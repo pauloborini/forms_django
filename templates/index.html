@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load widget_tweaks %}
+
+<section class="col-8">
+
+    <h3>Verifique a disponibilidade</h3>
+    <form action="{% url 'minha_consulta' %}" method="POST">
+        {% csrf_token %}
+        {% for field in form.visible_fields %}
+        <div class="form-group">
+            <label for="{{field.id_for_label}}">{{field.label}}</label>
+            {{field|add_class:'form-control'}}
+        </div>
+        {% for errors in field.errors %}
+        <section class="alert alert-danger" role="alert">
+            {{ field.errors }}
+        </section>
+        {% endfor %}
+        {% endfor %}
+        {% for field in pessoa_form.visible_fields %}
+        <div class="form-group">
+            <label for="{{field.id_for_label}}">{{field.label}}</label>
+            {{field|add_class:'form-control'}}
+        </div>
+        {% endfor %}
+        <input type="submit" value="Ok" class="btn btn-success">
+    </form>
+</section>
+
+{% endblock %}
