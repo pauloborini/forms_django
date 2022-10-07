@@ -8,3 +8,4 @@ Nesse formulário irei simular uma busca por passagem aérea.
 - Criado o formulário utilizando Forms do Django e uma variação com models.
 - Mensagens de erros utilizando o Clean(), criando uma lista de erros e as exibindo quando necessário.
 - Melhoria no visual utilizando o bootstrap.
+- Mais uma pequena melhoria e tirado prints do formulário em funcionamento.
