@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load widget_tweaks %}
-
-<section class="col-8">
-
+<div class="mx-auto" style="width: 900px">
+<section class="col-6" >
+    <p></p>
     <h3>Verifique a disponibilidade</h3>
+    <p></p>
     <form action="{% url 'minha_consulta' %}" method="POST">
         {% csrf_token %}
         {% for field in form.visible_fields %}
@@ -24,8 +25,10 @@
             {{field|add_class:'form-control'}}
         </div>
         {% endfor %}
-        <input type="submit" value="Ok" class="btn btn-success">
+        <input type="submit" value="Enviar" class="btn btn-primary">
     </form>
 </section>
+</div>
+
 
 {% endblock %}
